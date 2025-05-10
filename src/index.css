@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import "tailwindcss";
+
+* {
+    box-sizing: border-box;
+}
+
+@theme {
+    --color-primary: #ffa500;
+    --color-white-bg: #fff;
+    --color-main-text: #fff;
+    --color-next-text: #6a7282;
+    --color-main-border: #e5e7eb;
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    min-height: 100vh;
+    font-size: 1.2rem;
+}
+
+@layer utilities {
+    .sidebar-link {
+        @apply p-3 flex items-center gap-3 text-next-text transition-all duration-500 ease-in-out rounded-l-lg border-b-2 border-b-main-border;
+    }
+
+    .sidebar-link:hover {
+        @apply bg-primary text-main-text;
+    }
+    .btn-secondary {
+        @apply xl:block bg-[var(--widget-bg)] rounded-full text-[var(--custom-text)] font-medium cursor-pointer transition-all duration-300 ease-in-out shadow-md
+        hover:shadow-lg hover:bg-[#f3a000] active:scale-95;
+    }
+
+    .input-icon {
+        @apply w-6 h-6 text-[var(--next-color)]
+    }
+
+    .post-icon {
+        @apply w-5.5 h-5.5 transition-all duration-300 ease-in-out cursor-pointer
+        hover:text-[var(--next-color)];
+    }
+
+    .custom-nowrap {
+        @apply inline-block whitespace-nowrap overflow-hidden text-ellipsis max-w-16 min-[400px]:max-w-[100px] min-[500px]:max-w-[140px] sm:max-w-[160px]
+    }
+
+}
+
+@layer components {
+    .input-modal {
+        @apply w-full h-14 border border-[var(--border-color)] bg-transparent outline-none p-2 rounded-lg;
+    }
+
+    .input-modal:focus {
+        @apply border-[var(--next-color)];
+    }
+}
