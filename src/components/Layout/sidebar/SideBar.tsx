@@ -12,12 +12,12 @@ export const SideBar = ({ isSideBarOpen, setIsSideBar }: SideBarProps) => {
 	return (
 		<aside
 			className={`h-screen bg-white flex
-     	flex-col justify-between fixed md:static z-60 transition-all
-      duration-300 ease-in-out w-full md:w-64 w-[60%]
-        ${isSideBarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>
+     	flex-col justify-between fixed lg:static z-60 transition-all
+      duration-300 w-full lg:w-64 
+        ${isSideBarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
 			<button
 				onClick={() => setIsSideBar(false)}
-				className="absolute top-4 right-4 md:hidden"
+				className="absolute top-4 right-4 lg:hidden"
 				aria-label="Close sidebar">
 				<XMarkIcon className="h-8 w-8 text-gray-500" />
 			</button>
