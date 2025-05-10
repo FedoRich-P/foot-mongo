@@ -5,6 +5,8 @@ import type { SearchResult, SearchResultsArray } from './searchTypes.ts';
 import { SearchResults } from './SearchResults.tsx';
 import { useDebounce } from '../../shared/lib/hooks/useDebounce.ts';
 import { useClickOutside } from '../../shared/lib/hooks/useClickOutside.ts';
+import type { SearchOptions } from '../../types';
+import { searchAPI } from '../../api/search/search.ts';
 
 interface Props {
 	placeholder?: string;
@@ -32,6 +34,13 @@ export const SearchBar = (props: Props) => {
 		if (debouncedValue.length > 2) {
 			setIsSearching(true);
 			setShowResults(true);
+			const searchReq: SearchOptions = { query: value };
+			searchAPI(searchReq).then((res) => {
+				setResults(res);
+				setIsSearching(false);
+			});
+		} else {
+			setResults([]);
 		}
 	}, [debouncedValue]);
 
@@ -39,6 +48,7 @@ export const SearchBar = (props: Props) => {
 
 	const handleResultClick = (result: SearchResult) => {
 		clearSearch();
+		console.log(result);
 		if (result?.type === 'restaurant') {
 			navigate(`/restaurants/${result?.id}`);
 		} else if (result.type === 'dish') {
@@ -73,15 +83,3 @@ export const SearchBar = (props: Props) => {
 		</div>
 	);
 };
-
-// useEffect(() => {
-// 	const handleClickOutside = (event: MouseEvent) => {
-// 		if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-// 			setShowResults(false);
-// 		}
-// 	};
-// 	document.addEventListener('mousedown', handleClickOutside);
-// 	return () => {
-// 		document.removeEventListener('mousedown', handleClickOutside);
-// 	};
-// }, []);
