@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router';
 import { SearchInput } from './SearchInput.tsx';
 import type { SearchResult, SearchResultsArray } from './searchTypes.ts';
 import { SearchResults } from './SearchResults.tsx';
+import { useDebounce } from '../../shared/lib/hooks/useDebounce.ts';
+import { useClickOutside } from '../../shared/lib/hooks/useClickOutside.ts';
 
 interface Props {
 	placeholder?: string;
@@ -19,34 +21,21 @@ export const SearchBar = (props: Props) => {
 	const searchRef = useRef<HTMLDivElement>(null);
 	const navigate = useNavigate();
 
+	const debouncedValue = useDebounce(value, 300);
+
 	const handleSearchChange = useCallback(async (e: ChangeEvent<HTMLInputElement>) => {
 		e.preventDefault();
-		const value = e.target.value;
-		setValue(value);
-		if (value.length > 2) {
-			setIsSearching(true);
-			setShowResults(true);
-
-			// const searchReq: SearchOptions = { query: value };
-			// const searchResults = await searchAPI(searchReq);
-			// setResults(searchResults);
-			// setIsSearching(false);
-		} else {
-			setResults([]);
-		}
+		setValue(e.target.value);
 	}, []);
 
 	useEffect(() => {
-		const handleClickOutside = (event: MouseEvent) => {
-			if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-				setShowResults(false);
-			}
-		};
-		document.addEventListener('mousedown', handleClickOutside);
-		return () => {
-			document.removeEventListener('mousedown', handleClickOutside);
-		};
-	}, []);
+		if (debouncedValue.length > 2) {
+			setIsSearching(true);
+			setShowResults(true);
+		}
+	}, [debouncedValue]);
+
+	useClickOutside(searchRef, () => setShowResults(false));
 
 	const handleResultClick = (result: SearchResult) => {
 		clearSearch();
@@ -84,3 +73,15 @@ export const SearchBar = (props: Props) => {
 		</div>
 	);
 };
+
+// useEffect(() => {
+// 	const handleClickOutside = (event: MouseEvent) => {
+// 		if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+// 			setShowResults(false);
+// 		}
+// 	};
+// 	document.addEventListener('mousedown', handleClickOutside);
+// 	return () => {
+// 		document.removeEventListener('mousedown', handleClickOutside);
+// 	};
+// }, []);
