@@ -1,31 +1,29 @@
+import { Categories } from '../../components/Categories/Categories.tsx';
+import { PopularDish } from '../../components/PopularDish/PopularDish.tsx';
+
 export function Dashboard() {
 	return (
-		<div className="py-4 w-[90%] md:w-full">
-			{/* Banner */}
-			<div className="rounded-lg py-2 mb-8 bg-main-bg flex items-center justify-between overflow-hidden relative">
+		<section className="py-4 md:w-full">
+			<h1 className="sr-only">Food delivery service - main page</h1>
+			<article className="rounded-lg p-2 mb-8 bg-main-bg flex items-stretch relative overflow-hidden fallback-bg">
 				<img
 					src={'/images/banner_2.png'}
 					alt="Discount offer"
-					className="md:h-48 h-40 md:object-cover rounded-lg"
+					className="absolute inset-0 w-full h-full object-cover object-right"
 				/>
-				<div className="absolute p-8">
-					<div className="md:max-w-md">
-						<h2 className="text-2xl font-bold text-white mb-2">Get Discount Voucher</h2>
-						<h3 className="text-xl font-bold text-white mb-4">Up To 20%</h3>
-						{/* <p className="text-white text-sm mb-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                   sed do eiusmod tempor incididunt.</p> */}
-						<button
-							className="mt-3 bg-white-bg text-sm py-2 px-4 rounded-md
-                    hover:bg-amber-100">
-							Upgrade
-						</button>
-					</div>
+				<div className="relative z-10 p-8 md:max-w-md flex flex-col justify-center">
+					<h2 className="text-2xl font-bold text-white mb-2">Get Discount Voucher</h2>
+					<h3 className="text-xl font-bold text-white mb-4">Up To 20%</h3>
+					<p className="text-white text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					<button
+						aria-label="Upgrade to get discount"
+						className="bg-white font-bold uppercase text-sm py-2 px-4 rounded-md border-2 border-main-border transition duration-500 ease-in hover:bg-transparent hover:text-main-text self-start">
+						Upgrade
+					</button>
 				</div>
-			</div>
-			{/* Categories */}
-			{/*<Categories />*/}
-			{/*<PopularDish />*/}
-		</div>
+			</article>
+			<Categories />
+			<PopularDish />
+		</section>
 	);
 }
