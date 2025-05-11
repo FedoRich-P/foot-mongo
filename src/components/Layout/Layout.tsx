@@ -9,23 +9,21 @@ export function Layout() {
 	const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 	const { pathname } = useLocation();
 	return (
-		<div className={'flex h-screen overflow-hidden relative'}>
+		<div className={'flex h-screen relative'}>
 			<SideBar
 				isSideBarOpen={isSideBarOpen}
 				setIsSideBar={setIsSideBarOpen}
 			/>
 			<button
 				onClick={() => setIsSideBarOpen(true)}
-				className="fixed top-4 left-4 z-50 lg:hidden"
+				className="fixed top-4 left-4 z-50 lg:hidden border-2 border-main-border rounded-lg p-2 fallback-bg"
 				aria-label="Open sidebar">
 				<Bars3Icon className="h-8 w-8 text-gray-700" />
 			</button>
-			<div className={'flex-1 bg-main-border'}>
-				<main className="bg-main-border min-h-full p-3 pt-7 sm:p-4 sm:pt-7 w-full">
-					<Header />
-					<Outlet />
-				</main>
-			</div>
+			<main className="bg-main-border pt-11 lg:pt-3 h-full w-full overflow-y-auto p-2">
+				<Header />
+				<Outlet />
+			</main>
 			{pathname !== '/checkout' && <RightSideBar />}
 		</div>
 	);

@@ -14,7 +14,7 @@ export function SearchInput({ value, placeholder, handleSearchChange, clearSearc
 			<MagnifyingGlassIcon className="block w-8 h-full text-gray-400 absolute inset-y-0 left-0 pl-3 pointer-events-none" />
 			<input
 				type="text"
-				className="bg-white w-80 p-3 pl-10 pr-10 text-sm rounded-lg
+				className="bg-white max-w-80 w-full p-3 pl-10 pr-10 text-sm rounded-lg
              focus:outline-none focus:ring-2 focus:ring-primary"
 				value={value}
 				onChange={handleSearchChange}

@@ -10,26 +10,19 @@ interface SideBarProps {
 
 export const SideBar = ({ isSideBarOpen, setIsSideBar }: SideBarProps) => {
 	return (
-		<aside
-			className={`h-screen bg-white flex
-     	flex-col justify-between fixed lg:static z-60 transition-all
-      duration-300 w-full lg:w-64 
-        ${isSideBarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
-			<button
-				onClick={() => setIsSideBar(false)}
-				className="absolute top-4 right-4 lg:hidden"
-				aria-label="Close sidebar">
-				<XMarkIcon className="h-8 w-8 text-gray-500" />
-			</button>
+		<aside className={`sidebar ${isSideBarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+			<div className="relative flex flex-col items-center h-full w-full lg:w-full sm:w-[50%] overflow-y-auto">
+				<button
+					onClick={() => setIsSideBar(false)}
+					className="absolute top-5 right-5 lg:hidden border-2 border-main-border rounded-lg p-1 cursor-pointer"
+					aria-label="Close sidebar">
+					<XMarkIcon className="h-8 w-8 text-gray-500" />
+				</button>
+				<h1 className="p-5 text-2xl font-bold bg-primary rounded-bl-md w-full">
+					Freshly <span className="text-main-text text-4xl">.</span>
+				</h1>
 
-			<div className="flex flex-col items-center h-full overflow-y-auto">
-				<div className="flex bg-primary w-full justify-center py-5">
-					<h1 className="text-2xl font-bold">
-						Freshly <span className="text-main-text text-4xl">.</span>
-					</h1>
-				</div>
-
-				<nav className="w-full">
+				<nav className="h-full w-full mb-4 bg-white">
 					<ul className="space-y-3 p-2 pr-0">
 						{SIDEBAR_ITEMS.map((item, index) => (
 							<SidebarItem
