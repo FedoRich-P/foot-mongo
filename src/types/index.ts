@@ -1,15 +1,13 @@
-export interface SearchOptions {
-	query: string;
-}
+import type { MenuItem } from '../pades/RestaurantMenu/resturantMenuTypes.ts';
 
-export interface FoodItem {
-	id: number;
-	name: string;
-	price: number;
-	image: string;
-	rating: number;
-	discount?: number;
-	favorite?: boolean;
+export type SearchOptions = {
+	query: string;
+};
+
+export type FoodItem = {
+	description: string;
 	restaurantId?: string;
 	restaurantName?: string;
-}
+} & MenuItem;
+
+export type FoodItems = FoodItem[];

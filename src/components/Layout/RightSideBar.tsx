@@ -4,7 +4,7 @@ import { Cart } from '../Cart/Cart.tsx';
 
 export const RightSideBar = () => {
 	return (
-		<aside className="p-4 w-full md:w-[25%] hidden md:block md:mt-0 overflow-auto">
+		<aside className=" p-4 w-[50%] hidden md:block h-screen sticky top-0 overflow-y-auto lg:w-[40%] xl:w-[33%]">
 			<div className="flex justify-between items-center">
 				<div className="flex flex-wrap gap-2">
 					<BellIcon className="h-5 w-5" />

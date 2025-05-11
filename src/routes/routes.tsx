@@ -2,6 +2,8 @@ import { createBrowserRouter } from 'react-router';
 import { Layout } from '../components/Layout/Layout.tsx';
 import { Dashboard } from '../pades/Dashboard/Dashboard.tsx';
 import { PATHS } from './paths.ts';
+import { Restaurants } from '../pades/Restaurants/Restaurants.tsx';
+import { RestaurantMenu } from '../pades/RestaurantMenu/RestaurantMenu.tsx';
 
 export const router = createBrowserRouter([
 	{
@@ -11,6 +13,14 @@ export const router = createBrowserRouter([
 			{
 				index: true,
 				element: <Dashboard />,
+			},
+			{
+				path: PATHS.RESTAURANTS,
+				element: <Restaurants />,
+			},
+			{
+				path: PATHS.RESTAURANTS + '/:id',
+				element: <RestaurantMenu />,
 			},
 			{
 				path: PATHS.ERROR,
