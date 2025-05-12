@@ -4,6 +4,7 @@ import { Dashboard } from '@/pades/Dashboard/Dashboard';
 import { PATHS } from './paths';
 import { Restaurants } from '@/pades/Restaurants/Restaurants';
 import { RestaurantMenu } from '@/pades/RestaurantMenu/RestaurantMenu';
+import { Checkout } from '@/pades/Checkout/Checkout';
 
 export const router = createBrowserRouter([
 	{
@@ -23,19 +24,13 @@ export const router = createBrowserRouter([
 				element: <RestaurantMenu />,
 			},
 			{
+				path: PATHS.CHECKOUT,
+				element: <Checkout />,
+			},
+			{
 				path: PATHS.ERROR,
 				element: <h1>Error...</h1>,
 			},
 		],
 	},
 ]);
-
-// export const PATHS = {
-// 	HOME: '/',
-// 	RESTAURANTS: '/restaurants',
-// 	MESSAGES: '/messages',
-// 	HISTORY: '/history',
-// 	BILLS: '/bills',
-// 	SETTINGS: '/settings',
-// ERROR: '*',
-// } as const;
