@@ -1,13 +1,28 @@
 import { useState } from 'react';
-import type { FoodItems } from '../../types';
-import { foodItems } from './foodItemsDB.ts';
-import { SectionHeader } from '../SectionHeader/SectionHeader.tsx';
-import { FoodCard } from '../FoodCard/FoodCard.tsx';
+import type { FoodItem, FoodItems } from '@/types';
+import { foodItems } from './foodItemsDB';
+import { SectionHeader } from '../SectionHeader/SectionHeader';
+import { FoodCard } from '../FoodCard/FoodCard';
+import { useAppDispatch, useAppSelector } from '@store/hooks';
+import { MenuItem } from '@components/Restaurants/resturantMenuTypes';
+import { addItem, selectCarts } from '@features/cart/cartSlice';
 
 export const PopularDish = () => {
-	const [popularItems, setPopularItems] = useState<FoodItems>(foodItems);
+	const [popularItems, setPopularItems] = useState<Omit<MenuItem, 'description'>[]>(foodItems);
 
-	// const handleDiskClick = (item: FoodItem) => {};
+	const carts = useAppSelector(selectCarts);
+
+	const dispatch = useAppDispatch();
+
+	function handleSubmit(values: FoodItem) {
+		dispatch(
+			addItem({
+				item: { ...values, id: values.id.toString(), quantity: 1 },
+				restaurantId: 'Popular Dishes',
+				restaurantName: 'Popular Dishes',
+			}),
+		);
+	}
 
 	return (
 		<section className="mb-8 border-b-1 border-primary pb-8">
@@ -20,6 +35,7 @@ export const PopularDish = () => {
 					<FoodCard
 						key={item.id}
 						item={item}
+						addItem={handleSubmit}
 					/>
 				))}
 			</ul>

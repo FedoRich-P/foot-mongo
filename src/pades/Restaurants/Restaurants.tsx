@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { cuisineData, restaurantData, type SelectTypes } from './constants';
-import type { CuisineFilter, CuisineFilters, RestaurantsType } from './restaurantsTypes.ts';
-import { RestaurantCard } from './RestaurantCard.tsx';
-import { RestaurantBanner } from './RestaurantBanner.tsx';
-import { sortRestaurants } from '../../shared/lib/sort/sortRestaurants.ts';
-import { RestaurantsFiltersButtons } from './RestaurantsFiltersButtons.tsx';
-import { RestaurantSelect } from './RestaurantSelect.tsx';
+import { cuisineData, restaurantData, type SelectTypes } from '@components/Restaurants/constants';
+import type { CuisineFilter, CuisineFilters, RestaurantsType } from '@components/Restaurants/restaurantsTypes';
+import { RestaurantCard } from '@components/Restaurants/RestaurantCard';
+import { RestaurantBanner } from '@components/Restaurants/RestaurantBanner';
+import { sortRestaurants } from '@shared/lib/sort/sortRestaurants';
+import { RestaurantsFiltersButtons } from '@components/Restaurants/RestaurantsFiltersButtons';
+import { RestaurantSelect } from '@components/Restaurants/RestaurantSelect';
 
 export const Restaurants = () => {
 	const [restaurants, setRestaurants] = useState<RestaurantsType>(restaurantData);

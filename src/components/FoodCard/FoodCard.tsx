@@ -1,13 +1,18 @@
 import { HeartIcon, PlusIcon } from '@heroicons/react/24/solid';
-import { RatingStars } from '../common/Rating.tsx';
+import { RatingStars } from '../common/Rating';
 import { Link } from 'react-router';
-import type { FoodItem } from '../../types';
+import type { FoodItem } from '@/types';
 
 type Props = {
 	item: FoodItem;
+	addItem: (item: FoodItem) => void;
 };
 
-export function FoodCard({ item }: Props) {
+export function FoodCard({ item, addItem }: Props) {
+	function handleSubmit() {
+		addItem(item);
+	}
+
 	return (
 		<li
 			key={item.id}
@@ -44,7 +49,9 @@ export function FoodCard({ item }: Props) {
 				{item.description && <p className="text-gray-500 text-sm mb-3 text-center line-clamp-2">{item.description}</p>}
 				<div className="flex justify-between items-center mt-auto">
 					<span className="font-bold text-primary">${item.price?.toFixed(2)}</span>
-					<button className="btn-popular-cart">
+					<button
+						className="btn-popular-cart"
+						onClick={handleSubmit}>
 						buy now
 						<PlusIcon className="h-6 w-6" />
 					</button>

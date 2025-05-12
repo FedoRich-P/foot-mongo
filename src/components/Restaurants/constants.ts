@@ -1,5 +1,4 @@
-// import { MenuCategory } from '../RestaurantMenu/RestaurantMenu';
-import type { RestaurantsType } from './restaurantsTypes.ts';
+import type { RestaurantsType } from './restaurantsTypes';
 
 export const restaurantData: RestaurantsType = [
 	{

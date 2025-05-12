@@ -1,4 +1,4 @@
-import type { SearchOptions } from '../types';
+import type { SearchOptions } from '@/types';
 
 export const smartSearch = (options: SearchOptions): any[] => {
 	// For now, we'll use a simple mock implementation

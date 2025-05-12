@@ -1,6 +1,6 @@
-import type { FoodItems } from '../../types';
+import { MenuItem } from '@components/Restaurants/resturantMenuTypes';
 
-export const foodItems: FoodItems = [
+export const foodItems: Omit<MenuItem, 'description'>[] = [
 	{
 		id: 1,
 		name: 'Burger',

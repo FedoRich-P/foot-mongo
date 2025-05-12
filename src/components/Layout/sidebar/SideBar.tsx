@@ -1,7 +1,7 @@
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import type { Dispatch, SetStateAction } from 'react';
-import { SIDEBAR_ITEMS } from './sidebarItems.ts';
-import { SidebarItem } from './SidebarItem.tsx';
+import { SIDEBAR_ITEMS } from './sidebarItems';
+import { SidebarItem } from './SidebarItem';
 
 interface SideBarProps {
 	isSideBarOpen: boolean;
@@ -35,9 +35,7 @@ export const SideBar = ({ isSideBarOpen, setIsSideBar }: SideBarProps) => {
 
 				<div className="flex flex-col mt-auto gap-3 w-full bg-primary p-4 rounded-tl-md">
 					<h3 className="text-sm text-main-text font-semibold">Upgrade your Account to Get Free Voucher</h3>
-					<button className="bg-white-bg text-sm font-bold uppercase py-2 px-4 rounded-md border-2 border-white-bg hover:bg-transparent hover:text-main-text transition-all duration-500">
-						Upgrade
-					</button>
+					<button className="btn-main">Upgrade</button>
 				</div>
 			</div>
 		</aside>

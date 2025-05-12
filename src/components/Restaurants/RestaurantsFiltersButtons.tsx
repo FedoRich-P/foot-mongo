@@ -1,4 +1,4 @@
-import type { CuisineFilter, CuisineFilters } from './restaurantsTypes.ts';
+import type { CuisineFilter, CuisineFilters } from './restaurantsTypes';
 
 type Props = {
 	buttons: CuisineFilters;

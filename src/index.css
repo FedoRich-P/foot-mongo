@@ -29,7 +29,7 @@ body {
     }
 
     .sidebar-link {
-        @apply p-3 flex items-center gap-3 text-next-text transition-all duration-500 ease-in-out rounded-l-lg border-b-2 border-b-main-border;
+        @apply p-3 flex items-center gap-3 text-next-text text-lg transition-all duration-500 ease-in-out rounded-l-lg border-b-2 border-b-main-border;
     }
 
     .sidebar-link:hover {
@@ -52,6 +52,22 @@ body {
 
     .section-header {
         @apply py-1 px-4 text-primary border-1 border-transparent rounded-md text-lg font-medium flex items-center cursor-pointer transition-all duration-500 hover:text-main-text hover:border-primary
+    }
+
+    .btn-main  {
+        @apply bg-white-bg text-sm font-bold uppercase py-2 px-4 rounded-md border-2 border-white-bg  transition-all duration-500
+    }
+
+    .btn-main:hover {
+        @apply bg-transparent text-main-text
+    }
+
+    .btn-secondary  {
+        @apply bg-primary text-sm font-bold capitalize text-main-text py-2 px-4 rounded-md border-2 border-primary  transition-all duration-500 mb-3 inline-flex items-center gap-4
+    }
+
+    .btn-secondary:hover {
+        @apply bg-transparent text-primary
     }
 
     .btn-filters {
