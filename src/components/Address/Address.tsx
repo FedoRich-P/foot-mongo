@@ -1,21 +1,16 @@
-import { addressFields } from '@components/Address/addressFields';
+import { addressFields, AddressProps } from '@components/Address/addressFields';
 
 type Props = {
-	street: string;
-	city: string;
-	building?: string;
-	entrance: string;
-	apartment: string;
+	address: AddressProps;
 	onChange: () => void;
+	className?: string;
 };
 
 export const Address = (props: Props) => {
-	const { street, city, building, entrance, apartment, onChange } = props;
-
-	const values = { street, city, building, entrance, apartment };
+	const { address, onChange, className } = props;
 
 	return (
-		<section className="mb-6 border-b border-primary flex flex-col gap-2 py-3">
+		<section className={`mb-6 flex flex-col gap-3 py-3 ${className}`}>
 			<h2 className="text-xl font-semibold">Your Address</h2>
 
 			<dl className="space-y-2 pн-1">
@@ -30,7 +25,7 @@ export const Address = (props: Props) => {
 							/>
 							{label}:
 						</dt>
-						<dd className="ml-4 text-lg">{values[field] ?? '-'}</dd>
+						<dd className="ml-4 text-lg">{address[field] ?? '-'}</dd>
 					</div>
 				))}
 			</dl>

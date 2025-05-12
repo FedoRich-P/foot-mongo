@@ -1,5 +1,3 @@
-// @flow
-import * as React from 'react';
 import { CurrencyDollarIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
 import { PlusIcon, TrashIcon } from '@heroicons/react/24/solid';
 import { RestaurantCart } from '@store/types';
@@ -15,7 +13,7 @@ export function CartControl({ activeCart }: Props) {
 	const navigate = useNavigate();
 
 	const serviceFee = 5;
-	const total = (activeCart?.totalAmount ?? 0) + serviceFee;
+	const total = activeCart?.totalAmount ? Number(activeCart?.totalAmount.toFixed(2)) + serviceFee : 0;
 
 	return (
 		<footer className="border-t border-gray-100 pt-4 mb-6 flex flex-col gap-3">

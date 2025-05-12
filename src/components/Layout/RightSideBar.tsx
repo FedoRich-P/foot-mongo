@@ -1,11 +1,12 @@
 import { BellIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
 import { Address } from '@components/Address/Address';
 import { Cart } from '@components/Cart/Cart';
+import { UserInfo } from '@components/UserInfo';
 
 export const RightSideBar = () => {
 	return (
 		<aside className="py-4 px-2 w-[50%] hidden md:block h-screen sticky top-0 overflow-y-auto lg:w-[40%] xl:w-[33%]">
-			<div className="flex justify-between items-center border-b border-primary pb-5">
+			<div className="flex flex-col justify-between border-b border-primary pb-5">
 				<ul className="flex flex-wrap gap-2">
 					<li>
 						<button
@@ -30,19 +31,15 @@ export const RightSideBar = () => {
 						</button>
 					</li>
 				</ul>
-				<img
-					src="/icons/profile.png"
-					alt="profile"
-					className="block bg-primary p-1 rounded-lg w-14 h-auto"
+				<UserInfo
+					name={'Alex'}
+					phone={'89261234567'}
 				/>
 			</div>
 			<Address
-				city={'Moscow'}
-				apartment={'101'}
-				entrance={'7'}
-				street={'Lenina'}
-				building={'1'}
+				address={{ city: 'Moscow', apartment: '101', street: 'Lenina', building: '1', entrance: '7' }}
 				onChange={() => {}}
+				className={'border-b border-primary'}
 			/>
 			<div className="flex gap-2 mt-4">
 				<button className="flex-1 border border-main-border rounded-md py-2 text-sm">Add Details</button>

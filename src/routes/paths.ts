@@ -5,5 +5,6 @@ export const PATHS = {
 	HISTORY: '/history',
 	BILLS: '/bills',
 	SETTINGS: '/settings',
+	CHECKOUT: '/checkout',
 	ERROR: '*',
 } as const;
