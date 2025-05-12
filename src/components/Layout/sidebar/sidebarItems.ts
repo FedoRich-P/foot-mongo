@@ -1,7 +1,7 @@
 import { BanknotesIcon, ChatBubbleLeftIcon, ClockIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
 import { HomeIcon } from '@heroicons/react/24/solid';
-import { PATHS } from '../../../routes/paths.ts';
-import type { SidebarItems } from './sidebarTypes.ts';
+import { PATHS } from '@routes/paths';
+import type { SidebarItems } from './sidebarTypes';
 
 export const SIDEBAR_ITEMS: SidebarItems = [
 	{ path: PATHS.HOME, Icon: HomeIcon, text: 'Dashboard' },

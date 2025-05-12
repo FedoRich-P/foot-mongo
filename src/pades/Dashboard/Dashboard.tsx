@@ -1,5 +1,5 @@
-import { Categories } from '../../components/Categories/Categories.tsx';
-import { PopularDish } from '../../components/PopularDish/PopularDish.tsx';
+import { Categories } from '@components/Categories/Categories';
+import { PopularDish } from '@components/PopularDish/PopularDish';
 
 export function Dashboard() {
 	return (
@@ -12,7 +12,7 @@ export function Dashboard() {
 					className="absolute inset-0 w-full h-full object-cover object-right"
 				/>
 				<div className="relative z-10 p-8 md:max-w-md flex flex-col justify-center">
-					<h2 className="text-2xl font-bold text-white mb-2">Get Discount Voucher</h2>
+					<h2 className="text-2xl font-bold text-white mb-2 ">Get Discount Voucher</h2>
 					<h3 className="text-xl font-bold text-white mb-4">Up To 20%</h3>
 					<p className="text-white text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 					<button

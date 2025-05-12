@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { foodCategoryItems, type FoodCategoryItems } from './categoryItemsDB.ts';
-import { SectionHeader } from '../SectionHeader/SectionHeader.tsx';
+import { foodCategoryItems, type FoodCategoryItems } from './categoryItemsDB';
+import { SectionHeader } from '../SectionHeader/SectionHeader';
 import { Link } from 'react-router';
 
 export const Categories = () => {

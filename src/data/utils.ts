@@ -1,7 +1,7 @@
-import type { Restaurant } from '../pades/Restaurants/restaurantsTypes.ts';
-import { restaurantData } from '../pades/Restaurants/constants.ts';
-import type { MenuCategories } from '../pades/RestaurantMenu/resturantMenuTypes.ts';
-import { menuCategories } from '../pades/RestaurantMenu/constants.ts';
+import type { Restaurant } from '@components/Restaurants/restaurantsTypes';
+import { restaurantData } from '@components/Restaurants/constants';
+import type { MenuCategories } from '@components/Restaurants/resturantMenuTypes';
+import { menuCategories } from '@components/RestaurantMenu/constants';
 
 export const getRestaurantById = (id: number): Restaurant | undefined => {
 	return restaurantData.find((restaurant) => restaurant.id === id);

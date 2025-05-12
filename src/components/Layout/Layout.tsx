@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { SideBar } from './sidebar/SideBar.tsx';
-import { Header } from './Header.tsx';
+import { SideBar } from './sidebar/SideBar';
+import { Header } from './Header';
 import { Outlet, useLocation } from 'react-router';
-import { RightSideBar } from './RightSideBar.tsx';
+import { RightSideBar } from './RightSideBar';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 
 export function Layout() {
@@ -20,7 +20,7 @@ export function Layout() {
 				aria-label="Open sidebar">
 				<Bars3Icon className="h-8 w-8 text-gray-700" />
 			</button>
-			<main className="bg-main-border pt-11 lg:pt-3 h-full w-full overflow-y-auto p-2">
+			<main className="bg-main-border pt-11 px-4 lg:pt-3 h-full w-full overflow-y-auto">
 				<Header />
 				<Outlet />
 			</main>

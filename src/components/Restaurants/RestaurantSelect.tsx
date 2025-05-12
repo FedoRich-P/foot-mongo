@@ -1,4 +1,4 @@
-import { type SelectTypes, sortOptions } from './constants.ts';
+import { type SelectTypes, sortOptions } from '@components/Restaurants/constants';
 import type { ChangeEvent } from 'react';
 
 interface Props {

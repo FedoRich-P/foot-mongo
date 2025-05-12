@@ -1,5 +1,5 @@
 import { ClockIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/outline';
-import type { Restaurant } from '../Restaurants/restaurantsTypes.ts';
+import type { Restaurant } from '../Restaurants/restaurantsTypes';
 
 export const RestaurantInfo = (restaurant: Restaurant) => {
 	return (
@@ -9,7 +9,7 @@ export const RestaurantInfo = (restaurant: Restaurant) => {
 				alt={restaurant.name}
 				className="block object-cover w-24 h-24 rounded-lg overflow-hidden flex-shrink-0"
 			/>
-			<ul className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start flex-1 items-start">
+			<ul className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start flex-1">
 				<li className="flex items-start gap-2">
 					<MapPinIcon className="h-5 w-5 text-gray-500" />
 					<div>

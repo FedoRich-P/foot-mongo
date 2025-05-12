@@ -1,4 +1,4 @@
-import type { RestaurantsType } from '../../../pades/Restaurants/restaurantsTypes.ts';
+import type { RestaurantsType } from '@components/Restaurants/restaurantsTypes';
 
 interface Props {
 	restaurants: RestaurantsType;

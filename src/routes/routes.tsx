@@ -1,9 +1,9 @@
 import { createBrowserRouter } from 'react-router';
-import { Layout } from '../components/Layout/Layout.tsx';
-import { Dashboard } from '../pades/Dashboard/Dashboard.tsx';
-import { PATHS } from './paths.ts';
-import { Restaurants } from '../pades/Restaurants/Restaurants.tsx';
-import { RestaurantMenu } from '../pades/RestaurantMenu/RestaurantMenu.tsx';
+import { Layout } from '@components/Layout/Layout';
+import { Dashboard } from '@/pades/Dashboard/Dashboard';
+import { PATHS } from './paths';
+import { Restaurants } from '@/pades/Restaurants/Restaurants';
+import { RestaurantMenu } from '@/pades/RestaurantMenu/RestaurantMenu';
 
 export const router = createBrowserRouter([
 	{

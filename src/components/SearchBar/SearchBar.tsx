@@ -1,12 +1,12 @@
 import { type ChangeEvent, useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { SearchInput } from './SearchInput.tsx';
-import type { SearchResult, SearchResultsArray } from './searchTypes.ts';
-import { SearchResults } from './SearchResults.tsx';
-import { useDebounce } from '../../shared/lib/hooks/useDebounce.ts';
-import { useClickOutside } from '../../shared/lib/hooks/useClickOutside.ts';
-import type { SearchOptions } from '../../types';
-import { searchAPI } from '../../api/search/search.ts';
+import { SearchInput } from './SearchInput';
+import type { SearchResult, SearchResultsArray } from './searchTypes';
+import { SearchResults } from './SearchResults';
+import { useDebounce } from '@shared/lib/hooks/useDebounce';
+import { useClickOutside } from '@shared/lib/hooks/useClickOutside';
+import type { SearchOptions } from '@/types';
+import { searchAPI } from '@/api/search/search';
 
 interface Props {
 	placeholder?: string;
@@ -44,7 +44,7 @@ export const SearchBar = (props: Props) => {
 		}
 	}, [debouncedValue]);
 
-	useClickOutside(searchRef, () => setShowResults(false));
+	useClickOutside({ ref: searchRef, callback: () => setShowResults(false) });
 
 	const handleResultClick = (result: SearchResult) => {
 		clearSearch();
