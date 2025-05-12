@@ -9,6 +9,14 @@ export type AddressField = {
 	field: AddressFieldKey;
 };
 
+export type AddressProps = {
+	street: string;
+	city: string;
+	building?: string;
+	entrance: string;
+	apartment: string;
+};
+
 export const addressFields: AddressField[] = [
 	{ Icon: MapPinIcon, label: 'Street', field: 'street' },
 	{ Icon: BuildingOffice2Icon, label: 'City', field: 'city' },

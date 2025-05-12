@@ -9,14 +9,14 @@ export function Layout() {
 	const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 	const { pathname } = useLocation();
 	return (
-		<div className={'flex h-screen relative'}>
+		<div className={'flex h-screen relative max-w-[1440px] m-auto'}>
 			<SideBar
 				isSideBarOpen={isSideBarOpen}
 				setIsSideBar={setIsSideBarOpen}
 			/>
 			<button
 				onClick={() => setIsSideBarOpen(true)}
-				className="fixed top-4 left-4 z-50 lg:hidden border-2 border-main-border rounded-lg p-2 fallback-bg"
+				className="fixed top-2 left-2 z-50 lg:hidden border-2 border-main-border rounded-lg p-2 fallback-bg"
 				aria-label="Open sidebar">
 				<Bars3Icon className="h-8 w-8 text-gray-700" />
 			</button>
