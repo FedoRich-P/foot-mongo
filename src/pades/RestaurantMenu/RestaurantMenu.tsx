@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { RatingStars } from '../../components/common/Rating.tsx';
-import type { MenuCategories } from './resturantMenuTypes.ts';
-import type { Restaurant } from '../Restaurants/restaurantsTypes.ts';
-import { getMenuForRestaurant, getRestaurantById } from '../../data/utils.ts';
-import { RestaurantMenuCategory } from './RestaurantMenuCategory.tsx';
-import { RestaurantInfo } from './RestaurantInfo.tsx';
+import { RatingStars } from '@components/common/Rating';
+import type { MenuCategories } from '@components/Restaurants/resturantMenuTypes';
+import type { Restaurant } from '@components/Restaurants/restaurantsTypes';
+import { getMenuForRestaurant, getRestaurantById } from '@/data/utils';
+import { RestaurantMenuCategory } from '@components/RestaurantMenu/RestaurantMenuCategory';
+import { RestaurantInfo } from '@components/RestaurantMenu/RestaurantInfo';
+import { ButtonGoBack } from '@components/ButtonGoBack';
 
 export const RestaurantMenu = () => {
 	const { id } = useParams();
+
 	const [restaurant, setRestaurant] = useState<Restaurant>();
 	const [menuCategories, setMenuCategories] = useState<MenuCategories>([]);
 
@@ -20,6 +22,7 @@ export const RestaurantMenu = () => {
 			setMenuCategories(menuData);
 		}
 	}, [id]);
+
 	return (
 		<section className="pb-8">
 			{restaurant && (
@@ -48,6 +51,7 @@ export const RestaurantMenu = () => {
 						</div>
 					</div>
 					<RestaurantInfo {...restaurant} />
+					<ButtonGoBack />
 					{menuCategories?.map((category) => (
 						<RestaurantMenuCategory
 							restaurantId={String(restaurant.id)}

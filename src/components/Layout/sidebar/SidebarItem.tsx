@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import type { SidebarLinkItem } from './sidebarTypes.ts';
+import type { SidebarLinkItem } from './sidebarTypes';
 
 export function SidebarItem({ path, Icon, text }: SidebarLinkItem) {
 	return (

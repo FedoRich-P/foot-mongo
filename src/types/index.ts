@@ -1,11 +1,11 @@
-import type { MenuItem } from '../pades/RestaurantMenu/resturantMenuTypes.ts';
+import type { MenuItem } from '@components/Restaurants/resturantMenuTypes';
 
 export type SearchOptions = {
 	query: string;
 };
 
 export type FoodItem = {
-	description: string;
+	description?: string;
 	restaurantId?: string;
 	restaurantName?: string;
 } & MenuItem;

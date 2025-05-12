@@ -1,4 +1,4 @@
-import type { MenuCategories } from './resturantMenuTypes.ts';
+import type { MenuCategories } from '../Restaurants/resturantMenuTypes';
 
 export const menuCategories: Record<number, MenuCategories> = {
 	1: [

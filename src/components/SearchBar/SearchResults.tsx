@@ -1,4 +1,4 @@
-import type { SearchResult, SearchResultsArray } from './searchTypes.ts';
+import type { SearchResult, SearchResultsArray } from './searchTypes';
 
 interface Props {
 	value: string;

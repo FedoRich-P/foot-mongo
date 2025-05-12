@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 import { ClockIcon, HeartIcon } from '@heroicons/react/24/outline';
-import { RatingStars } from '../../components/common/Rating';
-import type { Restaurant } from './restaurantsTypes.ts';
+import { RatingStars } from '@components/common/Rating';
+import type { Restaurant } from './restaurantsTypes';
 
 export const RestaurantCard = (props: Restaurant) => {
 	const { id, image, name, favorite, cuisineType, priceRange, rating, ratingCount, deliveryTime, distance, minOrder } =

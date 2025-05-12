@@ -1,14 +1,28 @@
-import { type RefObject, useEffect } from 'react';
+import { type RefObject, useEffect, useRef } from 'react';
 
-export const useClickOutside = (ref: RefObject<HTMLElement | null>, callback: () => void) => {
+type Props = {
+	ref: RefObject<HTMLElement | null>;
+	callback: () => void;
+};
+
+export const useClickOutside = ({ ref, callback }: Props) => {
+	const callbackRef = useRef(callback);
+
 	useEffect(() => {
-		const handleClick = (e: MouseEvent) => {
+		callbackRef.current = callback;
+	}, [callback]);
+
+	useEffect(() => {
+		const handleClick = (e: MouseEvent | TouchEvent) => {
 			if (ref.current && !ref.current.contains(e.target as Node)) {
-				callback();
+				callbackRef.current();
 			}
 		};
-
 		document.addEventListener('mousedown', handleClick);
-		return () => document.removeEventListener('mousedown', handleClick);
-	}, [ref, callback]);
+		document.addEventListener('touchstart', handleClick);
+		return () => {
+			document.removeEventListener('mousedown', handleClick);
+			document.removeEventListener('touchstart', handleClick);
+		};
+	}, [ref]);
 };
