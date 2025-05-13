@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from '@store/hooks';
 import { useNavigate } from 'react-router';
 import { clearCart, selectActiveCartIndex, selectCarts } from '@features/cart/cartSlice';
 import type { PaymentMethod } from './config/paymentOptions';
+import { PATHS } from '@routes/paths';
 
 type UseCheckoutSubmitParams = {
 	paymentMethod: PaymentMethod;
@@ -45,7 +46,7 @@ export const useCheckoutSubmit = (props: UseCheckoutSubmitParams) => {
 				localStorage.setItem('orders', JSON.stringify([...existing, order]));
 
 				dispatch(clearCart(activeCart.restaurantId));
-				navigate(`/order-track/${order.id}`);
+				navigate(`${PATHS.ORDER_TRACK}/${order.id}`);
 			}, 2000);
 		},
 		[activeCart, dispatch, navigate, paymentMethod, total],
