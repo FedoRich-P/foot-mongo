@@ -31,18 +31,16 @@ export const Restaurants = () => {
 				text={'Explore the best restaurants in your area with fast delivery and amazing food.'}
 			/>
 
-			<div className="mb-4">
-				<div className="flex items-end justify-center flex-col xl:flex-row xl:items-center gap-4">
-					<RestaurantsFiltersButtons
-						buttons={cuisineFilters}
-						setActiveCuisine={setActiveCuisine}
-						activeId={activeCuisine.id}
-					/>
-					<RestaurantSelect
-						activeSort={activeSort}
-						setActiveSort={setActiveSort}
-					/>
-				</div>
+			<div className="mb-4 flex items-end justify-center flex-col xl:flex-row xl:items-center gap-4">
+				<RestaurantsFiltersButtons
+					buttons={cuisineFilters}
+					setActiveCuisine={setActiveCuisine}
+					activeId={activeCuisine.id}
+				/>
+				<RestaurantSelect
+					activeSort={activeSort}
+					setActiveSort={setActiveSort}
+				/>
 			</div>
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">

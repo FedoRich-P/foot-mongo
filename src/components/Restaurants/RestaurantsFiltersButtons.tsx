@@ -8,7 +8,7 @@ type Props = {
 
 export function RestaurantsFiltersButtons({ buttons, activeId, setActiveCuisine }: Props) {
 	return (
-		<ul className="flex flex-nowrap gap-2 w-full overflow-y-auto pb-2">
+		<ul className="flex flex-nowrap gap-1.5 w-full overflow-y-auto pb-2">
 			{buttons.map((filter) => (
 				<li key={filter.id}>
 					<button
