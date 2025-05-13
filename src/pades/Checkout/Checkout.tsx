@@ -51,7 +51,12 @@ export const Checkout = () => {
 					<h3 className="font-medium text-gray-700 mb-2">{activeCart?.restaurantName}</h3>
 
 					<ul className="max-h-60 overflow-y-auto border-b-2 border-primary p-3">
-						{activeCart?.items?.map((item) => <CheckoutActiveElement item={item} />)}
+						{activeCart?.items?.map((item) => (
+							<CheckoutActiveElement
+								key={item.id}
+								item={item}
+							/>
+						))}
 					</ul>
 					<CheckoutSummaryDetails
 						serviceCharge={serviceCharge}
@@ -68,7 +73,7 @@ export const Checkout = () => {
 					<button
 						onClick={handleSubmit}
 						disabled={isProcessing}
-						className={`py-3 px-7 rounded-md font-medium self-end ${
+						className={`py-3 px-7 rounded-md text-lg font-medium self-end ${
 							isProcessing ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary text-white hover:bg-amber-400'
 						}`}>
 						{isProcessing ? 'Processing....' : 'Place Order'}
