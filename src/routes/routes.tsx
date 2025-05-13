@@ -5,6 +5,7 @@ import { PATHS } from './paths';
 import { Restaurants } from '@/pades/Restaurants/Restaurants';
 import { RestaurantMenu } from '@/pades/RestaurantMenu/RestaurantMenu';
 import { Checkout } from '@/pades/Checkout/Checkout';
+import { OrderTracking } from '@/pades/OrderTracking/OrderTracking';
 
 export const router = createBrowserRouter([
 	{
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
 			{
 				path: PATHS.CHECKOUT,
 				element: <Checkout />,
+			},
+			{
+				path: `${PATHS.ORDER_TRACK}/:orderId`,
+				element: <OrderTracking />,
 			},
 			{
 				path: PATHS.ERROR,

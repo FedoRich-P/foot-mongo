@@ -6,5 +6,6 @@ export const PATHS = {
 	BILLS: '/bills',
 	SETTINGS: '/settings',
 	CHECKOUT: '/checkout',
+	ORDER_TRACK: '/order-track',
 	ERROR: '*',
 } as const;

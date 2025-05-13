@@ -17,16 +17,16 @@ export function UserInfo({ name, phone, email, className, src }: Props) {
 				className="w-14 h-14 rounded-lg bg-primary p-1 object-cover"
 			/>
 			<dl className="space-y-1">
-				<div className="flex">
-					<dt className="font-semibold mr-1">Name: </dt>
+				<div className="flex items-baseline">
+					<dt className="font-medium text-base mr-1">Name: </dt>
 					<dd>{name}</dd>
 				</div>
-				<div className="flex">
-					<dt className="font-semibold mr-1">Phone: </dt>
+				<div className="flex items-baseline">
+					<dt className="font-medium text-base mr-1">Phone: </dt>
 					<dd>
 						<a
 							href={`tel:${phone}`}
-							className="text-primary hover:underline line-clamp-1">
+							className="text-primary text-base hover:underline line-clamp-1">
 							{formatPhoneRu(phone)}
 						</a>
 					</dd>
