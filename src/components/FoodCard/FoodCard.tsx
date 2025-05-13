@@ -44,16 +44,16 @@ export function FoodCard({ item, addItem }: Props) {
 					className={'mb-2'}
 				/>
 				<Link to={'#'}>
-					<h3 className="font-medium mb-4">{item.name}</h3>
+					<h3 className="font-medium text-lg mb-4">{item.name}</h3>
 				</Link>
 				{item.description && <p className="text-gray-500 text-sm mb-3 text-center line-clamp-2">{item.description}</p>}
 				<div className="flex justify-between items-center mt-auto">
-					<span className="font-bold text-primary">${item.price?.toFixed(2)}</span>
+					<span className="font-bold text-lg text-primary">$ {item.price?.toFixed(2)}</span>
 					<button
 						className="btn-popular-cart"
 						onClick={handleSubmit}>
 						buy now
-						<PlusIcon className="h-6 w-6" />
+						<PlusIcon className="h-5 w-5" />
 					</button>
 				</div>
 			</div>

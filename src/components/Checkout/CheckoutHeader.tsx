@@ -8,8 +8,8 @@ type Props = {
 
 export function CheckoutHeader({ paymentMethod, setPaymentMethod }: Props) {
 	return (
-		<header className="bg-white rounded-lg shadow-md p-6 my-2">
-			<h2 className="text-xl font-bold mb-4">Payment Method</h2>
+		<header className="bg-white rounded-lg text-lg shadow-md p-6 my-2">
+			<h2 className="text-lg font-bold mb-4">Payment Method</h2>
 			<ul className="flex flex-wrap gap-4 mb-6">
 				{paymentOptions.map((option) => (
 					<CheckoutHeaderElement

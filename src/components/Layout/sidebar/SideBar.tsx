@@ -34,7 +34,7 @@ export const SideBar = ({ isSideBarOpen, setIsSideBar }: SideBarProps) => {
 				</nav>
 
 				<div className="flex flex-col mt-auto gap-3 w-full bg-primary p-4 rounded-tl-md">
-					<h3 className="text-sm text-main-text font-semibold">Upgrade your Account to Get Free Voucher</h3>
+					<h3 className="text-sm text-main-text font-bold">Upgrade your Account to Get Free Voucher</h3>
 					<button className="btn-main">Upgrade</button>
 				</div>
 			</div>
